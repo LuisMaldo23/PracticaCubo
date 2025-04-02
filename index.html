@@ -68,12 +68,20 @@
         <div id="IDControl" class="info">ID Control: Representa el identificador único del control.</div>
         <div id="NombreControl" class="info">Nombre Control: Nombre del control de seguridad aplicado.</div>
         <div id="Descripcion" class="info">Descripción: Explicación detallada del control.</div>
-        <div id="CampoAplicacion" class="info">Campo de Aplicación: Contexto en el que se aplica el control.</div>
+        <div id="CampoAplicacion" class="info">
+            Campo de Aplicación: Contexto en el que se aplica el control.
+            <div class="button-container">
+                <button onclick="mostrarControles('Tecnología de la Información')">Tecnología de la Información</button>
+                <button onclick="mostrarControles('Seguridad de la Información')">Seguridad de la Información</button>
+                <button onclick="mostrarControles('Gestión de riesgos')">Gestión de riesgos</button>
+                <button onclick="mostrarControles('Continuidad del negocio')">Continuidad del negocio</button>
+            </div>
+        </div>
         <div id="RiesgoAsociado" class="info">Riesgo Asociado: Qué tipo de riesgo mitiga este control.</div>
     </main>
-
-
-  
+    
+    <div id="controles-container" class="controls-container"></div>
+    
     <script src="script.js"></script>
 </body>
-</html>
+</html    
