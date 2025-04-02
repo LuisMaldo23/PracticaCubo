@@ -1,92 +1,83 @@
 const normasISO = {
-'ISO 27001': {
-    'Descripcion': 'Norma principal para establecer, implementar, mantener y mejorar un Sistema de Gestión de Seguridad de la Información (SGSI), garantizando la confidencialidad, integridad y disponibilidad de la información.',
-    'CampoAplicacion': `
-        <div class="campos-aplicacion">
-            <button onclick="mostrarControles('Tecnología de la Información')">1. Tecnología de la Información</button>
-            <button onclick="mostrarControles('Seguridad de la Información')">2. Seguridad de la Información</button>
-            <button onclick="mostrarControles('Continuidad del negocio')">3. Continuidad del negocio</button>
-            <button onclick="mostrarControles('Gestión de Riesgos')">4. Gestión de Riesgos</button>
-        </div>
-    `,
-    'RiesgoAsociado': `
-        <div class="riesgos-listas">
-            <div class="lista-riesgos">
-                <h4>Riesgos Tecnológicos</h4>
-                <ul>
-                    <li>Pérdida de datos: Pérdida o corrupción de información crítica.</li>
-                    <li>Fallas de hardware: Mal funcionamiento de equipos que pueden interrumpir operaciones.</li>
-                    <li>Errores de software: Bugs que pueden comprometer la funcionalidad y seguridad.</li>
-                    <li>Obsolescencia tecnológica: Equipos o software desactualizados que no reciben soporte.</li>
-                    <li>Accesibilidad limitada: Dificultades para acceder a sistemas y datos bajo ciertas condiciones.</li>
-                </ul>
+    'ISO 27001': {
+        'Descripcion': 'Norma principal para establecer, implementar, mantener y mejorar un Sistema de Gestión de Seguridad de la Información (SGSI), garantizando la confidencialidad, integridad y disponibilidad de la información.',
+        'CampoAplicacion': '',
+        'RiesgoAsociado': `
+            <div class="riesgos-listas">
+                <div class="lista-riesgos">
+                    <h4>Riesgos Tecnológicos</h4>
+                    <ul>
+                        <li>Pérdida de datos: Pérdida o corrupción de información crítica.</li>
+                        <li>Fallas de hardware: Mal funcionamiento de equipos que pueden interrumpir operaciones.</li>
+                        <li>Errores de software: Bugs que pueden comprometer la funcionalidad y seguridad.</li>
+                        <li>Obsolescencia tecnológica: Equipos o software desactualizados que no reciben soporte.</li>
+                        <li>Accesibilidad limitada: Dificultades para acceder a sistemas y datos bajo ciertas condiciones.</li>
+                    </ul>
+                </div>
+                <div class="lista-riesgos">
+                    <h4>Ciber Riesgos</h4>
+                    <ul>
+                        <li>Ataques de malware: Infecciones por virus, ransomware, etc.</li>
+                        <li>Phishing: Intentos de suplantación de identidad para robar credenciales.</li>
+                        <li>Acceso no autorizado: Intrusiones y accesos ilegales a sistemas y redes.</li>
+                        <li>Exfiltración de datos: Robo de información sensible.</li>
+                        <li>Denegación de servicio (DoS): Ataques que buscan hacer que los servicios sean inaccesibles.</li>
+                    </ul>
+                </div>
             </div>
-
-            <div class="lista-riesgos">
-                <h4>Ciber Riesgos</h4>
-                <ul>
-                    <li>Ataques de malware: Infecciones por virus, ransomware, etc.</li>
-                    <li>Phishing: Intentos de suplantación de identidad para robar credenciales.</li>
-                    <li>Acceso no autorizado: Intrusiones y accesos ilegales a sistemas y redes.</li>
-                    <li>Exfiltración de datos: Robo de información sensible.</li>
-                    <li>Denegación de servicio (DoS): Ataques que buscan hacer que los servicios sean inaccesibles.</li>
-                </ul>
-            </div>
-        </div>
-    `,
-    'ControlesRelacionados': {
-        'Tecnología de la Información': [
-            {
-                'ID': 'A5.9',
-                'Titulo': 'Inventario de información y otros activos',
-                'Descripcion': 'Establecer y mantener un proceso de gestión de datos documentado. En el proceso, abordar la confidencialidad de los datos, el propietario de los datos, el manejo de los datos, los límites de retención de datos y los requisitos de eliminación, en función de los estándares de confidencialidad y retención de la empresa. Revisar y actualizar la documentación anualmente o cuando se produzcan cambios importantes en la empresa que puedan afectar a esta salvaguardia..'
-            },
-            {
-                'ID': 'A8.8',
-                'Titulo': 'Gestión de vulnerabilidades técnicas',
-                'Descripcion': 'Realice análisis automatizados de vulnerabilidades de los activos internos de la empresa de forma trimestral o con mayor frecuencia. Realice análisis tanto autenticados como no autenticados..'
-            }
-        ],
-        'Seguridad de la Información': [
-            {
-                'ID': 'A8.7',
-                'Titulo': 'Protección contra malware',
-                'Descripcion': 'Implementar medidas de seguridad para prevenir, detectar y responder ante malware en sistemas y redes.'
-            },
-            {
-                'ID': 'A8.8',
-                'Titulo': 'Gestión de vulnerabilidades técnicas',
-                'Descripcion': 'Procesos para identificar y corregir vulnerabilidades en infraestructuras y aplicaciones.'
-            }
-        ],
-        'Continuidad del negocio': [
-            {
-                'ID': 'A5.9',
-                'Titulo': 'Inventario de información y otros activos',
-                'Descripcion': 'Mantener un inventario actualizado de los activos críticos para la continuidad del negocio.'
-            },
-            {
-                'ID': 'A8.19',
-                'Titulo': 'Instalación de software en sistemas operativos',
-                'Descripcion': 'Controlar y supervisar la instalación de software para garantizar la seguridad y continuidad de operaciones.'
-            }
-        ],
-        'Gestión de Riesgos': [
-            {
-                'ID': 'A8.8',
-                'Titulo': 'Gestión de vulnerabilidades técnicas',
-                'Descripcion': 'Evaluar y mitigar riesgos de seguridad derivados de vulnerabilidades tecnológicas.'
-            },
-            {
-                'ID': 'A8.7',
-                'Titulo': 'Protección contra malware',
-                'Descripcion': 'Estrategias para prevenir infecciones y ataques de software malicioso.'
-            }
-        ]
+        `,
+        'Controles': {
+            'Tecnología de la Información': [
+                {
+                    'ID': 'A5.9',
+                    'Titulo': 'Inventario de información y otros activos',
+                    'Descripcion': 'Establecer y mantener un proceso de gestión de datos documentado. En el proceso, abordar la confidencialidad de los datos, el propietario de los datos, el manejo de los datos, los límites de retención de datos y los requisitos de eliminación, en función de los estándares de confidencialidad y retención de la empresa. Revisar y actualizar la documentación anualmente o cuando se produzcan cambios importantes en la empresa que puedan afectar a esta salvaguardia.'
+                },
+                {
+                    'ID': 'A8.8',
+                    'Titulo': 'Gestión de vulnerabilidades técnicas',
+                    'Descripcion': 'Realice análisis automatizados de vulnerabilidades de los activos internos de la empresa de forma trimestral o con mayor frecuencia. Realice análisis tanto autenticados como no autenticados.'
+                }
+            ],
+            'Seguridad de la Información': [
+                {
+                    'ID': 'A8.7',
+                    'Titulo': 'Protección contra malware',
+                    'Descripcion': 'Implementar medidas de seguridad para prevenir, detectar y responder ante malware en sistemas y redes.'
+                },
+                {
+                    'ID': 'A8.8',
+                    'Titulo': 'Gestión de vulnerabilidades técnicas',
+                    'Descripcion': 'Procesos para identificar y corregir vulnerabilidades en infraestructuras y aplicaciones.'
+                }
+            ],
+            'Continuidad del negocio': [
+                {
+                    'ID': 'A5.9',
+                    'Titulo': 'Inventario de información y otros activos',
+                    'Descripcion': 'Mantener un inventario actualizado de los activos críticos para la continuidad del negocio.'
+                },
+                {
+                    'ID': 'A8.19',
+                    'Titulo': 'Instalación de software en sistemas operativos',
+                    'Descripcion': 'Controlar y supervisar la instalación de software para garantizar la seguridad y continuidad de operaciones.'
+                }
+            ],
+            'Gestión de riesgos': [
+                {
+                    'ID': 'A8.8',
+                    'Titulo': 'Gestión de vulnerabilidades técnicas',
+                    'Descripcion': 'Evaluar y mitigar riesgos de seguridad derivados de vulnerabilidades tecnológicas.'
+                },
+                {
+                    'ID': 'A8.7',
+                    'Titulo': 'Protección contra malware',
+                    'Descripcion': 'Estrategias para prevenir infecciones y ataques de software malicioso.'
+                }
+            ]
+        },
+        'IDControl': 'ID-27001',
     },
-    'IDControl': 'ID-27001',
-
-},
 
         'ISO 27002': {
             'Descripcion': 'Proporciona un conjunto detallado de controles de seguridad y mejores prácticas para la implementación de un SGSI basado en ISO 27001.',
@@ -1109,6 +1100,7 @@ const normasISO = {
             'NombreControl': '',
             'IDControl': '',
         },
+    
         
     };
 
@@ -1116,61 +1108,64 @@ const normasISO = {
     function mostrarInfo(id) {
         // Ocultar todas las informaciones
         document.querySelectorAll('.info').forEach(el => el.style.display = 'none');
-
+    
         const elemento = document.getElementById(id);
         // Mostrar la información correspondiente
         elemento.style.display = 'block';
     }
-
+    
     function mostrarNormaInfo(norma) {
         // Actualizar cada categoría con la información de la norma seleccionada
         const normaInfo = normasISO[norma];
-
+    
         // Actualizar los elementos de la información de la norma
-        document.getElementById("IDControl").innerHTML = ` ID Control: ${normaInfo.IDControl}`;
+        document.getElementById("IDControl").innerHTML = `ID Control: ${normaInfo.IDControl}`;
         document.getElementById("NombreControl").innerHTML = `Nombre Control: ${normaInfo.NombreControl}`;
         document.getElementById("Descripcion").innerHTML = `Descripción: ${normaInfo.Descripcion}`;
-        document.getElementById("CampoAplicacion").innerHTML = ` Campo de Aplicación: ${normaInfo.CampoAplicacion}`;
+        document.getElementById("CampoAplicacion").innerHTML = `
+            Campo de Aplicación: ${normaInfo.CampoAplicacion}
+            <div class="button-container">
+                <button onclick="mostrarControles('Tecnología de la Información')">Tecnología de la Información</button>
+                <button onclick="mostrarControles('Seguridad de la Información')">Seguridad de la Información</button>
+                <button onclick="mostrarControles('Gestión de riesgos')">Gestión de riesgos</button>
+                <button onclick="mostrarControles('Continuidad del negocio')">Continuidad del negocio</button>
+            </div>
+        `;
         document.getElementById("RiesgoAsociado").innerHTML = `Riesgo Asociado: ${normaInfo.RiesgoAsociado}`;
-
-        function mostrarControles(campo) {
-            const container = document.getElementById('controles-container');
-            const controles = ISO_27001.ControlesRelacionados[campo];
-            
-            if (controles) {
-                container.innerHTML = `
-                    <h3>Controles asociados a ${campo}</h3>
-                    <ul>
-                        ${controles.map(c => `<li><strong>${c.ID}</strong> - ${c.Titulo}: ${c.Descripcion}</li>`).join('')}
-                    </ul>
-                `;
-            } else {
-                container.innerHTML = `<p>No hay controles asociados a ${campo}.</p>`;
-            }
-            container.style.display = 'block';
-        }
-        
-        function mostrarInfo(seccion) {
-            document.querySelectorAll('.info').forEach(div => div.style.display = 'none');
-            document.getElementById(seccion).style.display = 'block';
-        }
-
+    
         // Mostrar la información correspondiente de la norma
         document.getElementById("Estandar").style.display = 'block';
         document.querySelectorAll('.info').forEach(el => el.style.display = 'block');
     }
-
-    // Rotacion del cubo 
+    
+    function mostrarControles(campo) {
+        const container = document.getElementById('controles-container');
+        const controles = normasISO['ISO 27001'].Controles[campo];
+        
+        if (controles) {
+            container.innerHTML = `
+                <h3>Controles = ${campo}</h3>
+                <ul>
+                    ${controles.map(c => `<li><strong>${c.ID}</strong> - ${c.Titulo}: ${c.Descripcion}</li>`).join('')}
+                </ul>
+            `;
+        } else {
+            container.innerHTML = `<p>No hay controles asociados a ${campo}.</p>`;
+        }
+        container.style.display = 'block';
+    }
+    
+    // Rotación del cubo
     let startX, startY, rotX = 0, rotY = 0;
     const cubo = document.getElementById("cubo");
-
+    
     function startDrag(event) {
         startX = event.clientX;
         startY = event.clientY;
         document.onmousemove = rotateCubo;
         document.onmouseup = stopDrag;
     }
-
+    
     function rotateCubo(event) {
         let deltaX = event.clientX - startX;
         let deltaY = event.clientY - startY;
@@ -1180,7 +1175,7 @@ const normasISO = {
         startX = event.clientX;
         startY = event.clientY;
     }
-
+    
     function stopDrag() {
         document.onmousemove = null;
         document.onmouseup = null;
