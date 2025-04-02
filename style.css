@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #a1cef5;
+    margin: 0;
+    padding: 0;
+}
+
+h3  {
+    text-align: center; 
+    color: #ffffff; 
+    font-size: 40px; 
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #203942;
+    color: rgb(156, 244, 252);
+    padding: 20px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.scene {
+    width: 200px;
+    height: 200px;
+    perspective: 600px;
+    margin: 50px auto;
+    cursor: grab;
+}
+
+.cubo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
+}
+
+.lado {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #78d2ff; 
+    border: 2px solid #fffafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 10ms;
+}
+
+.lado:hover {
+    background: #bf00ff; 
+    
+}
+
+/* caras del cubo */
+.frente { transform: translateZ(100px); background: #00ff04; }
+.atras { transform: rotateY(180deg) translateZ(100px); background: #ffc107; }
+.izquierda { transform: rotateY(-90deg) translateZ(100px); background: #dc3545; }
+.derecha { transform: rotateY(90deg) translateZ(100px); background: #f26006; }
+.arriba { transform: rotateX(90deg) translateZ(100px); background: #bf00ff; }
+.abajo { transform: rotateX(-90deg) translateZ(100px); background: #007bff; }
+
+
+.info {
+    padding: 10px;
+    border: 2px solid #845050;
+    background: rgb(132, 74, 104);
+    display: none;
+    width: 50%;
+    margin: 20px auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#lista-iso {
+    column-count: 2; 
+    column-gap: 50px; 
+    align-items: center;
+    
+}
+
+
+#lista-iso li {
+    list-style: none;
+    padding: 8px;
+    border: 1px solid #ffffff;
+    background-color: #30adad;
+    margin-bottom: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.riesgos-listas {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.lista-riesgos {
+    width: 39%; /* Cada lista ocupará casi la mitad del contenedor */
+    background-color: #30adad;
+    border: 2px solid #30adad;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.lista-riesgos h4 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.lista-riesgos ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.lista-riesgos li {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Para que se alineen a la izquierda y derecha */
+.riesgos-listas .lista-riesgos:nth-child(1) {
+    text-align: left;
+}
+
+.riesgos-listas .lista-riesgos:nth-child(3) {
+    text-align: right;
+}
+
+#IDControl {
+    color: #ff5733; 
+}
+
+#NombreControl {
+    color: #33ff57; 
+}
+
+#Descripcion {
+    color: #3357ff; 
+}
+
+#CampoAplicacion {
+    color: #ff33a1; 
+}
+
+#RiesgoAsociado {
+    color: #ffb533; 
+}
